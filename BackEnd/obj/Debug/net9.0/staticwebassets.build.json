@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "s8u4ueEWIUJnN5DZSt9KTz9qLJBBqNzwOFGmhJU41kc=",
+  "Source": "StockOfMachineParts",
+  "BasePath": "_content/StockOfMachineParts",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

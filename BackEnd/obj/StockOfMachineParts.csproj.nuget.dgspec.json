@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\gabri\\OneDrive\\Área de Trabalho\\projetos\\FULL\\ProjectKorp\\BackEnd\\StockOfMachineParts\\StockOfMachineParts.csproj": {}
+    "C:\\Users\\gabri\\OneDrive\\Área de Trabalho\\projetos\\FULL\\ProjectKorp\\BackEnd\\StockOfMachineParts.csproj": {}
   },
   "projects": {
-    "C:\\Users\\gabri\\OneDrive\\Área de Trabalho\\projetos\\FULL\\ProjectKorp\\BackEnd\\StockOfMachineParts\\StockOfMachineParts.csproj": {
+    "C:\\Users\\gabri\\OneDrive\\Área de Trabalho\\projetos\\FULL\\ProjectKorp\\BackEnd\\StockOfMachineParts.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\gabri\\OneDrive\\Área de Trabalho\\projetos\\FULL\\ProjectKorp\\BackEnd\\StockOfMachineParts\\StockOfMachineParts.csproj",
+        "projectUniqueName": "C:\\Users\\gabri\\OneDrive\\Área de Trabalho\\projetos\\FULL\\ProjectKorp\\BackEnd\\StockOfMachineParts.csproj",
         "projectName": "StockOfMachineParts",
-        "projectPath": "C:\\Users\\gabri\\OneDrive\\Área de Trabalho\\projetos\\FULL\\ProjectKorp\\BackEnd\\StockOfMachineParts\\StockOfMachineParts.csproj",
+        "projectPath": "C:\\Users\\gabri\\OneDrive\\Área de Trabalho\\projetos\\FULL\\ProjectKorp\\BackEnd\\StockOfMachineParts.csproj",
         "packagesPath": "C:\\Users\\gabri\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\gabri\\OneDrive\\Área de Trabalho\\projetos\\FULL\\ProjectKorp\\BackEnd\\StockOfMachineParts\\obj\\",
+        "outputPath": "C:\\Users\\gabri\\OneDrive\\Área de Trabalho\\projetos\\FULL\\ProjectKorp\\BackEnd\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\gabri\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -45,6 +45,20 @@
           "targetAlias": "net9.0",
           "dependencies": {
             "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
               "version": "[9.0.0, )"
             }
