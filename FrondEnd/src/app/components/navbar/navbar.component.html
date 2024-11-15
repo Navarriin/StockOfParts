@@ -1,0 +1,22 @@
+<img
+  src="https://www.korp.com.br/wp-content/themes/korp2022/images/logo.webp"
+  alt="Imagem do logo"
+/>
+<ul>
+  <li>
+    <a
+      routerLink="/"
+      (click)="setSelected('home')"
+      [class.selected]="selected === 'home'"
+      >Home</a
+    >
+  </li>
+  <li>
+    <a
+      routerLink="/list"
+      (click)="setSelected('list')"
+      [class.selected]="selected === 'list'"
+      >Lista de peças</a
+    >
+  </li>
+</ul>
