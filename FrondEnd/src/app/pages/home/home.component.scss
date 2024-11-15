@@ -1,0 +1,16 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-items: center;
+  text-align: justify;
+  color: var(--blue-color);
+
+  width: 30%;
+  height: 500px;
+  margin: auto;
+
+  button {
+    margin-top: 6rem;
+  }
+}

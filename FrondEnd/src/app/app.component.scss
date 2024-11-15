@@ -1,0 +1,17 @@
+main {
+  display: flex;
+  justify-content: space-around;
+  height: 80vh;
+  width: 95vw;
+  border-radius: 10px;
+
+  margin: auto;
+  margin-top: 3.5rem;
+  background-color: #e6e6e6;
+  align-items: center;
+
+  img {
+    margin-left: 5rem;
+    border-radius: 10px;
+  }
+}
