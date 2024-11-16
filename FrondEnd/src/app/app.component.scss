@@ -11,6 +11,15 @@ main {
   align-items: center;
 
   img {
+    display: none;
     border-radius: 10px;
+  }
+}
+
+@media (min-width: 1000px) {
+  main {
+    img {
+      display: flex;
+    }
   }
 }

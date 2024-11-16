@@ -12,6 +12,11 @@ export const routes: Routes = [
       import('./pages/list/list.component').then((page) => page.ListComponent),
   },
   {
+    path: 'form',
+    loadComponent: () =>
+      import('./pages/form/form.component').then((page) => page.FormComponent),
+  },
+  {
     path: '**',
     redirectTo: '',
   },

@@ -1,26 +1,73 @@
 :host {
-  margin-right: 10rem;
-  table {
-    border-collapse: collapse;
-    margin:auto;
-  }
-  th, td {
-    border: 1px solid #ddd;
-    text-align: center;
-    padding: 10px;
+  .responsive-table {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
 
-    img {
-      height: 23px;
-      width: 23px;
-      cursor: pointer;
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: auto;
     }
 
-    &.b {
-      display: flex;
-      gap: .4rem;
+    th,
+    td {
+      border: 1px solid #ddd;
+      text-align: center;
+      padding: 10px;
+      word-wrap: break-word;
+
+      img {
+        height: 23px;
+        width: 23px;
+        cursor: pointer;
+      }
+
+      &.b {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.4rem;
+      }
     }
-  }
-  th {
-    background-color: #f4f4f4;
+
+    th {
+      background-color: #f4f4f4;
+    }
+
+    @media (max-width: 1000px) {
+      margin-right: 5rem;
+    }
+
+    @media (max-width: 768px) {
+      table {
+        font-size: 14px;
+      }
+
+      th,
+      td {
+        padding: 8px;
+      }
+
+      td.b {
+        gap: 0.3rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      table {
+        font-size: 12px;
+      }
+
+      th,
+      td {
+        padding: 6px;
+      }
+
+      td.b img {
+        height: 18px;
+        width: 18px;
+      }
+    }
   }
 }

@@ -1,0 +1,58 @@
+<form class="form" [formGroup]="registerPart" (ngSubmit)="onSubmit()">
+  <p class="title">Cadastro de Peça</p>
+  <p class="message">Entre com os dados que deseja cadastrar</p>
+
+  <label>
+    <input
+      class="input"
+      id="partsName"
+      formControlName="partsName"
+      type="text"
+      placeholder=""
+      required=""
+    />
+    <span>Nome da Peça</span>
+  </label>
+
+  <label>
+    <input
+      class="input"
+      id="machineName"
+      formControlName="machineName"
+      type="text"
+      placeholder=""
+      required=""
+    />
+    <span>Nome da Maquina</span>
+  </label>
+
+  <div class="flex">
+    <label>
+      <input
+        class="input"
+        id="quantity"
+        formControlName="quantity"
+        type="number"
+        placeholder=""
+        required=""
+      />
+      <span>Quantidade</span>
+    </label>
+
+    <label>
+      <input
+        class="input"
+        id="price"
+        formControlName="price"
+        type="text"
+        placeholder=""
+        required=""
+      />
+      <span>Valor por unidade</span>
+    </label>
+  </div>
+  <div class="btns">
+    <button class="submit back" (click)="onCancel()">Voltar</button>
+    <button class="submit">Enviar</button>
+  </div>
+</form>

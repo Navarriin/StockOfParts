@@ -6,11 +6,15 @@
   text-align: justify;
   color: var(--blue-color);
 
-  width: 30%;
-  height: 500px;
-  margin-right: 10rem;
-
+  padding: 1rem;
   button {
     margin-top: 6rem;
+  }
+}
+
+@media (min-width: 1000px) {
+  :host {
+    width: 40%;
+    margin-right: 10rem;
   }
 }
