@@ -1,0 +1,26 @@
+:host {
+  margin-right: 10rem;
+  table {
+    border-collapse: collapse;
+    margin:auto;
+  }
+  th, td {
+    border: 1px solid #ddd;
+    text-align: center;
+    padding: 10px;
+
+    img {
+      height: 23px;
+      width: 23px;
+      cursor: pointer;
+    }
+
+    &.b {
+      display: flex;
+      gap: .4rem;
+    }
+  }
+  th {
+    background-color: #f4f4f4;
+  }
+}

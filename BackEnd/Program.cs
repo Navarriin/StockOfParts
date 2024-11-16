@@ -29,7 +29,9 @@ if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
 }
+app.UseCors("AllowAll");
 
+app.UseAuthorization();
 app.UseHttpsRedirection();
 app.MapControllers();
 

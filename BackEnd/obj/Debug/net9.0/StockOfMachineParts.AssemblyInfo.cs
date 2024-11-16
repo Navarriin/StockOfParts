@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("StockOfMachineParts")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+632492db7a90ea84f7ba1536bc5ec86a08eb56f6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+585661b41c8cf148d541080b9226bfb9ece69ac7")]
 [assembly: System.Reflection.AssemblyProductAttribute("StockOfMachineParts")]
 [assembly: System.Reflection.AssemblyTitleAttribute("StockOfMachineParts")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
