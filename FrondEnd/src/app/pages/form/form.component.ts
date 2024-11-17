@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { ApiService } from '../../services/api.service';
+import { PartsInterface } from '../../interfaces/parts.interface';
+import { ActivatedRoute, Router } from '@angular/router';
 import {
   FormControl,
   FormGroup,
@@ -6,9 +9,6 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
-import { ApiService } from '../../services/api.service';
-import { PartsInterface } from '../../interfaces/parts.interface';
 
 @Component({
   selector: 'app-form',
@@ -22,13 +22,6 @@ export class FormComponent {
   protected id!: number | null;
 
   protected registerPart: FormGroup<{
-    partsName: FormControl<string>;
-    machineName: FormControl<string>;
-    quantity: FormControl<number>;
-    price: FormControl<number>;
-  }>;
-
-  protected editPart!: FormGroup<{
     partsName: FormControl<string>;
     machineName: FormControl<string>;
     quantity: FormControl<number>;
@@ -50,30 +43,37 @@ export class FormComponent {
         this.id = null;
       }
     });
-    
+
     this.registerPart = this.formBuilder.group({
-      partsName: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(70)]],
-      machineName: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(70)]],
+      partsName: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(4),
+          Validators.maxLength(70),
+        ],
+      ],
+      machineName: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(4),
+          Validators.maxLength(70),
+        ],
+      ],
       quantity: [0, [Validators.required, Validators.min(0)]],
       price: [0, [Validators.required, Validators.min(0.1)]],
     });
 
-    this.editPart = this.formBuilder.group({
-      partsName: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(70)]],
-      machineName: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(70)]],
-      quantity: [0, [Validators.required, Validators.min(0)]],
-      price: [0, [Validators.required, Validators.min(0.1)]],
-    });
-
-   if(this.id) {
-    this.getPartById();
-   }
+    if (this.id) {
+      this.getPartById();
+    }
   }
 
   getPartById(): void {
     this.api.getPartById(this.id!).subscribe({
       next: (data) => {
-        this.editPart.setValue({
+        this.registerPart.setValue({
           partsName: data.partsName,
           machineName: data.machineName,
           quantity: data.quantity,
@@ -97,8 +97,8 @@ export class FormComponent {
   }
 
   onEdit(): void {
-    if (this.editPart.valid && this.id !== null) {
-      const value = this.editPart.value as PartsInterface;
+    if (this.registerPart.valid && this.id !== null) {
+      const value = this.registerPart.value as PartsInterface;
       const updatedValue = { ...value, id: this.id };
       this.api.updatePart(updatedValue).subscribe({
         next: () => {

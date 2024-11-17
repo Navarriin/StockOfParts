@@ -1,142 +1,79 @@
-@if (!verify) {
-  <form class="form" [formGroup]="registerPart" (ngSubmit)="onSubmit()">
-    <p class="title">Cadastro de Peça</p>
-    <p class="message">Entre com os dados que deseja cadastrar</p>
+<form
+  class="form"
+  [formGroup]="registerPart"
+  (ngSubmit)="verify ? onEdit() : onSubmit()"
+>
+  <p class="title">{{ verify ? "Edição de peças" : "Cadastro de peças" }}</p>
+  <p class="message">
+    Entre com os dados que deseja {{ verify ? "editar" : "cadastrar" }}
+  </p>
+  <label>
+    <input
+      class="input"
+      id="partsName"
+      formControlName="partsName"
+      type="text"
+      placeholder=""
+      required=""
+    />
+    <span>Nome da Peça</span>
+    @if (registerPart.get('partsName')?.invalid &&
+    registerPart.get('partsName')?.touched) {
+    <span class="err">Campo obrigatório</span>
+    }
+  </label>
+
+  <label>
+    <input
+      class="input"
+      id="machineName"
+      formControlName="machineName"
+      type="text"
+      placeholder=""
+      required=""
+    />
+    <span>Nome da Maquina</span>
+    @if (registerPart.get('machineName')?.invalid &&
+    registerPart.get('machineName')?.touched) {
+    <span class="err">Campo obrigatório</span>
+    }
+  </label>
+
+  <div class="flex">
     <label>
       <input
         class="input"
-        id="partsName"
-        formControlName="partsName"
+        id="quantity"
+        formControlName="quantity"
+        type="number"
+        placeholder=""
+        required=""
+      />
+      <span>Quantidade</span>
+      @if (registerPart.get('quantity')?.invalid &&
+      registerPart.get('quantity')?.touched) {
+      <span class="err">Quantidade deve ser maior ou igual a 0</span>
+      }
+    </label>
+
+    <label>
+      <input
+        class="input"
+        id="price"
+        formControlName="price"
         type="text"
         placeholder=""
         required=""
       />
-      <span>Nome da Peça</span>
-      @if (registerPart.get('partsName')?.invalid && registerPart.get('partsName')?.touched) {
-        <span class="err">Campo obrigatório</span>
+      <span>Valor por unidade</span>
+      @if (registerPart.get('price')?.invalid &&
+      registerPart.get('price')?.touched) {
+      <span class="err">Preço deve ser maior que 0</span>
       }
     </label>
-  
-    <label>
-      <input
-        class="input"
-        id="machineName"
-        formControlName="machineName"
-        type="text"
-        placeholder=""
-        required=""
-      />
-      <span>Nome da Maquina</span>
-      @if (registerPart.get('machineName')?.invalid && registerPart.get('machineName')?.touched) {
-        <span class="err">Campo obrigatório</span>
-      }
-    </label>
-  
-    <div class="flex">
-      <label>
-        <input
-          class="input"
-          id="quantity"
-          formControlName="quantity"
-          type="number"
-          placeholder=""
-          required=""
-        />
-        <span>Quantidade</span>
-        @if (registerPart.get('quantity')?.invalid && registerPart.get('quantity')?.touched) {
-          <span class="err">Quantidade deve ser maior ou igual a 0</span>
-        }
-      </label>
-  
-      <label>
-        <input
-          class="input"
-          id="price"
-          formControlName="price"
-          type="text"
-          placeholder=""
-          required=""
-        />
-        <span>Valor por unidade</span>
-        @if (registerPart.get('price')?.invalid && registerPart.get('price')?.touched) {
-          <span class="err">Preço deve ser maior que 0</span>
-        }
-      </label>
-    </div>
-    <div class="btns">
-      <button class="submit back" (click)="onCancel()">Voltar</button>
-      <button class="submit" [disabled]="registerPart.invalid">Enviar</button>
-    </div>
-  </form>
-  
-} @else {
-  <form class="form" [formGroup]="editPart" (ngSubmit)="onEdit()">
-    <p class="title">Edição de Peças</p>
-    <p class="message">Entre com os dados que deseja editar</p>
-    <label>
-      <input
-        class="input"
-        id="partsName"
-        formControlName="partsName"
-        type="text"
-        placeholder=""
-        required=""
-      />
-      <span>Nome da Peça</span>
-      @if (editPart.get('partsName')?.invalid && editPart.get('partsName')?.touched) {
-        <span class="err">Campo obrigatório</span>
-      }
-    </label>
-  
-    <label>
-      <input
-        class="input"
-        id="machineName"
-        formControlName="machineName"
-        type="text"
-        placeholder=""
-        required=""
-      />
-      <span>Nome da Maquina</span>
-      @if (editPart.get('machineName')?.invalid && editPart.get('machineName')?.touched) {
-        <span class="err">Campo obrigatório</span>
-      }
-    </label>
-  
-    <div class="flex">
-      <label>
-        <input
-          class="input"
-          id="quantity"
-          formControlName="quantity"
-          type="number"
-          placeholder=""
-          required=""
-        />
-        <span>Quantidade</span>
-        @if (editPart.get('quantity')?.invalid && editPart.get('quantity')?.touched) {
-          <span class="err">Campo obrigatório</span>
-        }
-      </label>
-  
-      <label>
-        <input
-          class="input"
-          id="price"
-          formControlName="price"
-          type="text"
-          placeholder=""
-          required=""
-        />
-        <span>Valor por unidade</span>
-        @if (editPart.get('price')?.invalid && editPart.get('price')?.touched) {
-          <span class="err">Campo obrigatório</span>
-        }
-      </label>
-    </div>
-    <div class="btns">
-      <button class="submit back" (click)="onCancel()">Voltar</button>
-      <button class="submit" [disabled]="editPart.invalid">Enviar</button>
-    </div>
-  </form>
-}
+  </div>
+  <div class="btns">
+    <button class="submit back" (click)="onCancel()">Voltar</button>
+    <button class="submit" [disabled]="registerPart.invalid">Enviar</button>
+  </div>
+</form>
