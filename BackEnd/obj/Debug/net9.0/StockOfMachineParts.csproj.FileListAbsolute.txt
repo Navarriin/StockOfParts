@@ -144,3 +144,6 @@ C:\Users\gabri\OneDrive\Área de Trabalho\projetos\FULL\ProjectKorp\BackEnd\obj\
 C:\Users\gabri\OneDrive\Área de Trabalho\projetos\FULL\ProjectKorp\BackEnd\obj\Debug\net9.0\StockOfMachineParts.pdb
 C:\Users\gabri\OneDrive\Área de Trabalho\projetos\FULL\ProjectKorp\BackEnd\obj\Debug\net9.0\StockOfMachineParts.genruntimeconfig.cache
 C:\Users\gabri\OneDrive\Área de Trabalho\projetos\FULL\ProjectKorp\BackEnd\obj\Debug\net9.0\ref\StockOfMachineParts.dll
+C:\Users\gabri\OneDrive\Área de Trabalho\projetos\FULL\ProjectKorp\BackEnd\bin\Debug\net9.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\gabri\OneDrive\Área de Trabalho\projetos\FULL\ProjectKorp\BackEnd\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\gabri\OneDrive\Área de Trabalho\projetos\FULL\ProjectKorp\BackEnd\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll

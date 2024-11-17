@@ -69,6 +69,11 @@
 
 .form label {
   position: relative;
+
+  .err {
+    color: red;
+    font-size: 12px;
+  }
 }
 
 .form label .input {

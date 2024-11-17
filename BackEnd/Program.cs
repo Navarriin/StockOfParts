@@ -14,9 +14,17 @@ builder.Services.AddCors(options =>
     });
 });
 
-builder.Services.AddOpenApi();
-builder.Services.AddDbContext<AppDbContext>();
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
+    {
+        Title = "Estoque de peças para maquinas",
+        Version = "v1",
+        Description = "API para gerenciar o estoque de peças de máquinas.",
+    });
+});
 
+builder.Services.AddDbContext<AppDbContext>();
 builder.Services.AddScoped<IPartsRepository, PartsRepository>();
 builder.Services.AddScoped<IPartsService, PartsService>();
 
@@ -27,10 +35,11 @@ var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
 {
-    app.MapOpenApi();
+    app.UseSwagger();
+    app.UseSwaggerUI();
 }
-app.UseCors("AllowAll");
 
+app.UseCors("AllowAll");
 app.UseAuthorization();
 app.UseHttpsRedirection();
 app.MapControllers();

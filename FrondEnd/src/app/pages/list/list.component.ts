@@ -1,6 +1,7 @@
 import { Component, signal } from '@angular/core';
 import { ApiService } from '../../services/api.service';
 import { PartsInterface } from '../../interfaces/parts.interface';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list',
@@ -12,7 +13,7 @@ import { PartsInterface } from '../../interfaces/parts.interface';
 export class ListComponent {
   parts = signal<PartsInterface[]>([]);
 
-  constructor(private api: ApiService) {
+  constructor(private api: ApiService, private router: Router) {
     this.getAllParts();
   }
 
@@ -21,6 +22,14 @@ export class ListComponent {
       next: (data) => this.parts.set(data),
       error: (err) => console.log(err),
     });
+  }
+
+  editPart(id: number): void {
+    this.router.navigate([`form/${id}`]);
+  }
+
+  registerPart(): void {
+    this.router.navigate(['form']);
   }
 
   deletePart(id: number): void {

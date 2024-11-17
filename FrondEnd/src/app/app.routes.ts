@@ -17,6 +17,11 @@ export const routes: Routes = [
       import('./pages/form/form.component').then((page) => page.FormComponent),
   },
   {
+    path: 'form/:id',
+    loadComponent: () =>
+      import('./pages/form/form.component').then((page) => page.FormComponent),
+  },
+  {
     path: '**',
     redirectTo: '',
   },

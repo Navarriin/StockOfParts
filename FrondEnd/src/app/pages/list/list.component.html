@@ -19,11 +19,20 @@
         <td>{{ part.quantity }}</td>
         <td>{{ part.price }}</td>
         <td class="b">
-          <img src="https://cdn-icons-png.flaticon.com/512/1057/1057097.png" alt="icon de editar">
-          <img src="https://cdn-icons-png.flaticon.com/512/5963/5963185.png" alt="icon de deletar" (click)="deletePart(part.id!)">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/1057/1057097.png"
+            alt="icon de editar"
+            (click)="editPart(part.id!)"
+          />
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/5963/5963185.png"
+            alt="icon de deletar"
+            (click)="deletePart(part.id!)"
+          />
         </td>
       </tr>
       }
     </tbody>
   </table>
 </div>
+<button class="btn" (click)="registerPart()">Registrar nova Peça</button>
